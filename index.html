@@ -5,50 +5,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amanda DeShaw - Software Developer Portfolio</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+    
     <style>
+        /* General Styles */
         body {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #a8c8bf;
             color: #fff;
+            background: linear-gradient(to bottom, #a8c8bf 0%, #455a64 100%);
+            transition: background-color 1s ease;
+            scroll-behavior: smooth;
+        }
+
+        /* Darkens the background as you scroll */
+        body.scroll-dark {
+            background: linear-gradient(to bottom, #455a64 0%, #263238 100%);
         }
 
         header {
-            background-color: #a8c8bf;
-            color: #fff;
-            padding: 20px 0;
             text-align: center;
+            padding: 40px 0;
+            background: rgba(0, 0, 0, 0.5);
         }
 
-        main {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #abd6ce;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        h1, h2 {
+            font-family: 'Playfair Display', serif;
+            margin: 0;
+            color: #fff;
         }
 
         h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
+            font-size: 3em;
         }
 
         h2 {
-            font-size: 1.5em;
-            margin-top: 20px;
-            margin-bottom: 10px;
-            color: #2196F3; /* Blue heading color */
+            font-size: 1.8em;
+            color: #80deea;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 30px;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
         }
 
         section {
-            margin-bottom: 20px;
+            margin-bottom: 40px;
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background: #455a64;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            font-size: 1.1em;
         }
 
         .project {
             display: flex;
             align-items: center;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
+            background-color: #80cbc4;
+            padding: 20px;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .project:hover {
+            transform: scale(1.05);
         }
 
         .project-image {
@@ -59,30 +100,35 @@
             border-radius: 5px; /* Rounded corners for images */
         }
 
-        .project-description {
-            flex-grow: 1;
+        .project-description h3 {
+            font-size: 1.5em;
+            margin: 0 0 10px;
+            color: #fff;
         }
-
+        
         .contact {
             text-align: center;
-            margin-top: 20px;
         }
 
         .contact a {
-            color: #fff;
-            background-color: #2196F3; /* Blue button color */
-            padding: 10px 20px;
+            display: inline-block;
+            background-color: #80deea;
+            color: #263238;
+            padding: 12px 30px;
+            margin: 5px;
+            border-radius: 30px;
             text-decoration: none;
-            border-radius: 5px; /* Rounded button corners */
+            font-size: 1.2em;
             transition: background-color 0.3s ease; /* Smooth hover effect */
         }
 
         .contact a:hover {
-            text-decoration: underline;
-            background-color: #1976D2; /* Darker blue on hover */
+            background-color: #00acc1;
         }
+        
     </style>
 </head>
+    
 <body>
     <header>
         <h1>Amanda DeShaw</h1>
@@ -108,6 +154,7 @@ researching, organizing, and problem solving. Excellent organizational and commu
                     <a href="https://project1-link.com" target="_blank">View Project</a>
                 </div>
             </div>
+            
             <div class="project">
                 <img src="project2.jpg" alt="Project 2" class="project-image">
                 <div class="project-description">
@@ -141,5 +188,20 @@ researching, organizing, and problem solving. Excellent organizational and commu
             <a href="https://github.com/a-deshaw" target="_blank">My GitHub</a>
         </section>
     </main>
+
+    <script>
+        // Darken background as user scrolls down
+        window.addEventListener('scroll', function() {
+            const body = document.body;
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const threshold = 300; // Threshold for background color change
+
+            if (scrollTop > threshold) {
+                body.classList.add('scroll-dark');
+            } else {
+                body.classList.remove('scroll-dark');
+            }
+        });
+    </script>
 </body>
 </html>
