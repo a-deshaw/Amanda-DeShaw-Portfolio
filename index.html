@@ -2,31 +2,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Specifies the character encoding for the HTML document. -->
     <meta charset="UTF-8">
+
+    <!-- Configures the viewport for responsive design, ensuring proper scaling on different devices. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Sets the title of the HTML document, which appears in the browser tab. -->
     <title>Amanda DeShaw - Software Developer Portfolio</title>
 
     <!-- Google Fonts -->
+    <!-- Links to Google Fonts for the Playfair Display and Roboto font families, defining different weights for each. -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;500&display=swap" rel="stylesheet">
     
     <style>
         /* General Styles */
         body {
+            /* Sets the default font for the body to Roboto. */
             font-family: 'Roboto', sans-serif;
+
+            /*Removes default margins and padding from the body.*/
             margin: 0;
             padding: 0;
+
+            /*Sets the text color to white*/
             color: #fff;
+
+            /*Applies a linear gradient background with colors transitioning from #a8c8bf to #455a64.*/
             background: linear-gradient(to bottom, #a8c8bf 0%, #455a64 100%);
+            
+            /*Enables smooth scrolling for a better user experience.*/
             scroll-behavior: smooth;
+
+            /*Sets the line height for better readability.*/
             line-height: 1.6;
         }
 
         /* Darkens the background as you scroll */
         body.scroll-dark {
+            /*Changes the background gradient to a darker shade as the user scrolls.*/
             background: linear-gradient(to bottom, #455a64 0%, #263238 100%);
         }
 
         header {
+            /*Styles the header with centered text, padding, background color, and white text.*/
             text-align: center;
             padding: 40px 0;
             background: #263238;
@@ -34,6 +53,7 @@
         }
 
         h1 {
+            /*Styles the h1 tag with Playfair Display font, large font size, no margins, and white text.*/
             font-family: 'Playfair Display', serif;
             font-size: 3em;
             margin: 0;
@@ -41,6 +61,7 @@
         }
 
         h2 {
+            /*Styles the h2 tag with a larger font size, a specific color, Playfair Display font, and bottom margin.*/
             font-size: 1.8em;
             color: #80deea;
             font-family: 'Playfair Display', serif;
@@ -50,6 +71,7 @@
 
         /* Sticky Navigation */
         nav {
+            /*Styles the navigation bar to be sticky at the top, with a background color, padding, centered text, a high z-index for visibility, and a subtle box shadow.*/
             position: sticky;
             top: 0;
             background-color: #455a64;
@@ -60,6 +82,7 @@
         }
 
         nav a {
+            /*Styles the navigation links with margins, font size, color, no text decoration, and a smooth color transition on hover.*/
             margin: 0 20px;
             font-size: 1.2em;
             color: #fff;
@@ -68,10 +91,12 @@
         }
 
         nav a:hover {
+            /*Changes the link color to a specific shade on hover.*/
             color: #80deea;
         }
 
         main {
+            /*Styles the main content area with a maximum width, centered margin, padding, semi-transparent background, rounded corners, and a box shadow.*/
             max-width: 1000px;
             margin: 20px auto;
             padding: 30px;
@@ -81,20 +106,24 @@
         }
 
         section {
+            /*Adds a bottom margin to each section.*/
             margin-bottom: 60px;
         }
 
         p {
+            /*Styles paragraphs with a larger font size and line height.*/
             font-size: 1.2em;
             line-height: 1.6;
         }
 
         ul {
+            /*Removes bullet points from unordered lists and removes default padding.*/
             list-style-type: none;
             padding: 0;
         }
 
         li {
+            /*Styles list items with a background color, padding, margins, rounded corners, and a slightly larger font size.*/
             background: #455a64;
             padding: 10px;
             margin: 5px 0;
@@ -104,6 +133,7 @@
 
         /* Project Cards */
         .project {
+            /*Styles project cards with a flexbox layout, alignment, bottom margin, background color, padding, rounded corners, smooth transitions for transform and box shadow, and a subtle box shadow.*/
             display: flex;
             align-items: center;
             margin-bottom: 20px;
@@ -115,35 +145,43 @@
         }
 
         .project:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+            /*Adds a hover effect to the project cards, slightly lifting them and increasing the box shadow.*/
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
         }
 
         .project-image {
+            /*Styles the project image with fixed dimensions, margin, rounded corners, and hidden overflow to prevent image distortion.*/
             width: 150px;
-            height: 100px;
+            height: 150px;
             object-fit: cover;
             margin-right: 20px;
-            border-radius: 5px; /* Rounded corners for images */
+            border-radius: 10px; /* Rounded corners for images */
+            overflow: hidden;
         }
 
-        .project-description h3 {
+        .project-image img {
+            /*Ensures the image fits the container while maintaining its aspect ratio. */
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .project-info {
+            /*Makes the project info section take up the remaining space.*/
+            flex: 1;
+        }
+
+        .project-title {
+            /*Styles the project title with a larger font size and bottom margin.*/
             font-size: 1.5em;
-            margin: 0 0 10px;
-            color: #fff;
+            margin-bottom: 10px;
         }
 
-        .project-description a {
-            color: #263238;
-            background-color: #00acc1;
-            padding: 8px 20px;
-            border-radius: 20px;
-            text-decoration: none;
-            transition: background-color 0.3s ease;
-        }
-
-        .project-description a:hover {
-            background-color: #00838f;
+        .project-description {
+            /*Styles the project description with a slightly larger font size and line height.*/
+            font-size: 1.1em;
+            line-height: 1.5;
         }
         
         /* Contact Section */
@@ -169,11 +207,19 @@
 
         /* Footer */
         footer {
+            /*Styles the footer with a background color, padding, centered text, and positioning at the bottom of the page.*/
             background: #263238;
-            padding: 20px 0;
+            padding: 20px;
             text-align: center;
-            color: #80deea;
-            font-size: 1em;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            /*Styles the footer paragraph with no margin and a smaller font size.*/
+            margin: 0;
+            font-size: 0.9em;
         }
         
     </style>
@@ -181,30 +227,86 @@
     
 <body>
     <header>
+        <!-- Displays the header with the main title. -->
         <h1>Amanda DeShaw</h1>
+
+        <!-- Displays the sub-title describing the developer's role. -->
         <h2>Software Developer</h2>
+        
     </header>
+
+    <nav>
+        <!-- Navigation link to the "About" section. -->
+        <a href="#">About</a>
+        
+        <!-- Navigation link to the "Portfolio" section. -->
+        <a href="#">Portfolio</a>
+
+        <!-- Navigation link to the "Contact" section. -->
+        <a href="#">Contact</a>
+    </nav>
 
     <main>
         <!-- About Section -->
-        <section>
+        <section id="about">
+            <!-- Section header for the "About" section. -->
             <h2>About Me</h2>
+
+            <!-- Placeholder text for the "About" section. -->
             <p>
                 I am a passionate and dedicated software developer with a strong foundation in programming languages such as Java, C#, HTML, and Python. I have a proven track record of successfully delivering high-quality software solutions. I am eager to learn new technologies and continuously improve my skills. Enthusiastic and confident computer science student. Sharp, quick learner; willing to get involved. Strength in analyzing, 
 researching, organizing, and problem solving. Excellent organizational and communication skills.
             </p>
+            
         </section>
 
         <!-- Projects Section -->
-        <section>
+        <section id="portfolio">
+            <!--Section header for the "Portfolio" section.-->
             <h2>Projects</h2>
             
             <div class="project">
-                <img src="project1.jpg" alt="Project 1" class="project-image">
-                <div class="project-description">
+                <div class="project-image">
+                    <img src="project1.jpg" alt="Project 1">
+                    <!-- Placeholder image for project 1. -->
+                </div>
+                <div class="project-info">
+                    <h3 class="project-title">Project 1 Title</h3>
+                    <!-- Title for project 1. -->
+                    <p class="project-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Sed posuere consectetur est at lobortis. Donec sed odio dui. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+                    <!-- Description for project 1. -->
+                </div>
+            </div>
+                    <div class="project-description">
                     <h3>Project Title 1</h3>
                     <p>Brief description of the project, including technologies used and key features.</p>
                     <a href="https://project1-link.com" target="_blank">View Project</a>
+                </div>
+            </div>
+
+            <div class="project">
+                <div class="project-image">
+                    <img src="project2.jpg" alt="Project 2">
+                    <!-- Placeholder image for project 2. -->
+                </div>
+                <div class="project-info">
+                    <h3 class="project-title">Project 2 Title</h3>
+                    <!-- Title for project 2. -->
+                    <p class="project-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Sed posuere consectetur est at lobortis. Donec sed odio dui. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+                    <!-- Description for project 2. -->
+                </div>
+            </div>
+
+            <div class="project">
+                <div class="project-image">
+                    <img src="project3.jpg" alt="Project 3">
+                    <!-- Placeholder image for project 3. -->
+                </div>
+                <div class="project-info">
+                    <h3 class="project-title">Project 3 Title</h3>
+                    <!-- Title for project 3. -->
+                    <p class="project-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Sed posuere consectetur est at lobortis. Donec sed odio dui. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+                    <!-- Description for project 3. -->
                 </div>
             </div>
             
@@ -237,7 +339,10 @@ researching, organizing, and problem solving. Excellent organizational and commu
 
         <!-- Contact Section -->
         <section class="contact" id="contact">
-            <h2>Get in Touch</h2>
+            <!-- Section header for the "Contact" section. -->
+            <h2>Contact Me</h2>
+
+            <!-- Placeholder text for the "Contact" section. -->
             <a href="mailto:deshawamanda@gmail.com">Email me at deshawamanda@gmail.com!</a>
             <a href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank">My LinkedIn</a>
             <a href="https://github.com/a-deshaw" target="_blank">My GitHub</a>
@@ -245,7 +350,8 @@ researching, organizing, and problem solving. Excellent organizational and commu
     </main>
 
     <footer>
-        <p>© 2024 Amanda DeShaw. All rights reserved.</p>
+        <!-- Copyright information for the footer. -->
+        <p>© 2024 Amanda DeShaw</p>
     </footer>
 
     <script>
