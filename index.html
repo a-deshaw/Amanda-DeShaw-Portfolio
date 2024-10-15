@@ -42,28 +42,24 @@
         }
 
         /* Header styling */
-        header, nav {
+        header {
             background: var(--accent-color); /* Dark background for the header */
             color: var(--text-color-darkbackground); /* White text color */
-        }
-
-        header {
             text-align: center;
             padding: 40px 0;
         }
 
         /* Main title (h1) styling */
-        h1, h2 {
+        h1 {
             font-family: 'Playfair Display', serif; /* Playfair Display font for headings */
             margin: 0; /* No margin */
-        }
-
-        h1 {
             font-size: 3em;
         }
 
         /* Sub-heading (h2) styling */
         h2 {
+            font-family: 'Playfair Display', serif; /* Playfair Display font for headings */
+            margin: 0; /* No margin */
             font-size: 2em; /* Medium font size */
             color: var(--text-color-lightbackground); /* Light blue color */
             margin-bottom: 20px; /* Add space below the heading */
@@ -74,6 +70,7 @@
             position: sticky; /* Sticks to the top of the viewport */
             top: 0; /* Stays at the top */
             background-color: var(--primary-color); /* Dark background */
+            color: var(--text-color-darkbackground); /* White text color */
             padding: 10px 0; /* Add vertical padding */
             text-align: center; /* Center navigation links */
             z-index: 1000; /* Ensure it stays on top */
@@ -233,9 +230,10 @@
 
     <nav>
         <!-- Sticky navigation links to sections -->
-        <a href="#">About</a>
-        <a href="#">Portfolio</a>
-        <a href="#">Contact</a>
+        <a href="#about">About</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
     </nav>
 
     <main>
@@ -293,11 +291,10 @@ researching, organizing, and problem solving. Excellent organizational and commu
         <section id="skills">
             <h2>Skills</h2>
             <ul>
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>JavaScript</li>
-                <li>Python</li>
                 <li>Java</li>
+                <li>HTML</li>
+                <li>C#</li>
+                <li>Python</li>
                 <li>React</li>
                 <li>Node.js</li>
                 <li>SQL</li>
