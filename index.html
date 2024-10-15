@@ -5,10 +5,8 @@
 <head>
     <!-- Defines the character encoding for the HTML document page as UTF-8, ensuring proper display of text -->
     <meta charset="UTF-8">
-
     <!-- Configures the viewport for responsiveness across different devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <!-- Sets title that appears on the browser tab. -->
     <title>Amanda DeShaw - Software Developer Portfolio</title>
 
@@ -17,42 +15,57 @@
 
     <!--Begins the internal CSS for page styling -->
     <style>
+        /* Define color variables for reuse */
+        :root{
+            --primary-color: #274039;
+            --littledarker-primary-color: #425e56;
+            --secondary-color: #a8c8bf;
+            --littledarker-secondary-color: #92ada6;
+            --accent-color: #96b1a9;
+            --text-color-lightbackground: #bdd8d0;
+            --text-color-darkbackground: #fff;
+        }
         /* General Styles */
         body {
             font-family: 'Roboto', sans-serif; /* Use Roboto as the main font */
             margin: 0; /* Remove default margins */
             padding: 0; /* Remove default padding */
-            color: #fff; /* Set text color to white */
-            background: linear-gradient(to bottom, #a8c8bf 0%, #274039 100%); /* Apply gradient background */
+            color: var(--text-color-darkbackground); /* Set text color to white */
+            background: linear-gradient(to bottom, var(--secondary-color) 0%, var(--primary-color) 100%); /* Apply gradient background */
             scroll-behavior: smooth; /* Enable smooth scrolling */
             line-height: 1.6; /* Set line height for better readability */
         }
 
         /* Darkens the background when the user scrolls beyond a threshold */
         body.scroll-dark {
-            background: linear-gradient(to bottom, #a8c8bf 0%, #274039 100%);
+            background: linear-gradient(to bottom, var(--secondary-color) 0%, var(--primary-color) 100%);
         }
 
         /* Header styling */
+        header, nav, footer {
+            background: var(--accent-color); /* Dark background for the header */
+            color: var(--text-color-darkbackground); /* White text color */
+        }
+
         header {
-            text-align: center; /* Center the text */
-            padding: 40px 0; /* Add vertical padding */
-            background: #96b1a9; /* Dark background for the header */
-            color: #fff; /* White text color */
+            text-align: center;
+            padding: 40px 0;
         }
 
         /* Main title (h1) styling */
-        h1 {
+        h1, h2 {
             font-family: 'Playfair Display', serif; /* Playfair Display font for headings */
-            font-size: 3em; /* Large font size */
             margin: 0; /* No margin */
+        }
+
+        h1 {
+            font-size: 3em;
         }
 
         /* Sub-heading (h2) styling */
         h2 {
-            font-family: 'Playfair Display', serif; /* Consistent heading font */
             font-size: 2em; /* Medium font size */
-            color: #bdd8d0; /* Light blue color */
+            color: var(--text-color-lightbackground); /* Light blue color */
             margin-bottom: 20px; /* Add space below the heading */
         }
 
@@ -60,7 +73,7 @@
         nav {
             position: sticky; /* Sticks to the top of the viewport */
             top: 0; /* Stays at the top */
-            background-color: #274039; /* Dark background */
+            background-color: var(--primary-color); /* Dark background */
             padding: 10px 0; /* Add vertical padding */
             text-align: center; /* Center navigation links */
             z-index: 1000; /* Ensure it stays on top */
@@ -71,14 +84,14 @@
         nav a {
             margin: 0 20px; /* Space out the links */
             font-size: 1.2em; /* Slightly larger font */
-            color: #fff; /* White text */
+            color: var(--text-color-darkbackground); /* White text */
             text-decoration: none; /* Remove underlines */
             transition: color 0.3s; /* Smooth transition for hover effects */
         }
 
         /* Hover effect for navigation links */
         nav a:hover {
-            color: #425e56; /* Change color on hover */
+            color: var(--littledarker-primary-color); /* Change color on hover */
         }
 
         /* Main content container */
@@ -110,7 +123,7 @@
 
         /* List item styling for Skills section */
         li {
-            background: #274039; /* Dark background for list items */
+            background: var(--primary-color); /* Dark background for list items */
             padding: 10px; /* Add padding */
             margin: 5px 0; /* Space between list items */
             border-radius: 5px; /* Rounded corners */
@@ -122,7 +135,7 @@
             display: flex; /* Flexbox for layout */
             align-items: center; /* Center the content vertically */
             margin-bottom: 20px; /* Space between project cards */
-            background-color: #a8c8bf; /* Light teal background */
+            background-color: var(--secondary-color); /* Light teal background */
             padding: 20px; /* Padding inside the card */
             border-radius: 10px; /* Rounded corners */
             transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
@@ -176,8 +189,8 @@
         /* Styling for contact buttons */
         .contact a {
             display: inline-block; /* Display links as blocks */
-            background-color: #a8c8bf; /* Light blue background */
-            color: #274039; /* Dark text */
+            background-color: var(--secondary-color); /* Light blue background */
+            color: var(--primary-color); /* Dark text */
             padding: 12px 30px; /* Add padding */
             margin: 5px; /* Space between links */
             border-radius: 30px; /* Rounded pill shape */
@@ -188,12 +201,11 @@
 
         /* Hover effect for contact button links */
         .contact a:hover {
-            background-color: #92ada6; /* Darken background on hover */
+            background-color: var(--littledarker-secondary-color); /* Darken background on hover */
         }
 
         /* Footer styling */
         footer {
-            background: #274039; /* Dark background for the footer */
             padding: 20px; /* Add padding inside the footer */
             text-align: center; /* Center footer text */
             position: relative;
@@ -296,7 +308,7 @@ researching, organizing, and problem solving. Excellent organizational and commu
         <section class="contact" id="contact">
             <h2>Contact Me</h2>
             <!-- Placeholder text for the "Contact" section. -->
-            <a href="mailto:deshawamanda@gmail.com">Email me at deshawamanda@gmail.com!</a>
+            <a href="mailto:deshawamanda@gmail.com">Email me</a>
             <a href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank">My LinkedIn</a>
             <a href="https://github.com/a-deshaw" target="_blank">My GitHub</a>
         </section>
